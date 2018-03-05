@@ -1,0 +1,1 @@
+alter table usuario add column nome varchar(70)

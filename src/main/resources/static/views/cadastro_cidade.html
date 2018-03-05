@@ -1,0 +1,143 @@
+<h3>Cadastro Cidade</h3>
+<div class="modal-demo">
+<div class="row">
+	<div align="center">
+		<button ng-click="ctrl.novo()" class="btn btn-default"><span class="glyphicon glyphicon-plus barraFerramenta" aria-hidden="true"></span></button>
+	  	<button ng-click="ctrl.atualizar()" class="btn btn-default"><span class="glyphicon glyphicon-refresh barraFerramenta" aria-hidden="true"></span></button>
+	  	<button ng-click="ctrl.salvar()" ng-disabled="ctrl.modoGrade" class="btn btn-default"><span class="glyphicon glyphicon-ok barraFerramenta" aria-hidden="true"></span></button>
+	  	<button ng-click="ctrl.excluir(ctrl.cidade.id)" ng-disabled="ctrl.modoGrade" class="btn btn-default"><span class="glyphicon glyphicon-remove barraFerramenta" aria-hidden="true"></span></button>
+  		<button ng-click="ctrl.habilitarModoGrade()" class="btn btn-default" ng-show="ctrl.modoFormulario"><span class="glyphicon glyphicon-list-alt barraFerramenta" aria-hidden="true"></span></button>
+		<button ng-click="ctrl.habilitarModoFormulario()" class="btn btn-default" ng-show="ctrl.modoGrade"><span class="glyphicon glyphicon-menu-hamburger barraFerramenta" aria-hidden="true"></span></button>
+  </div>
+</div>
+<form ng-show="ctrl.modoFormulario">
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label for="cidade_id">ID</label>
+			<input type="text" class="form-control" id="cidade_id" ng-model="ctrl.cidade.id" ng-disabled="true">
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label for="cidade_nome">Nome</label>
+			<input type="text" class="form-control" id="cidade_nome" ng-model="ctrl.cidade.nome">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="cidade_uf">Unidade Federativa</label>
+			<p class="input-group">
+				<input type="text" class="form-control" id="cidade_uf" ng-model="ctrl.cidade.uf.descricao">
+				<span class="input-group-btn">
+					<button ng-click="ctrl.abrirPopUpPesquisaUF()" class="btn btn-default"><i class="glyphicon glyphicon-search barraFerramenta" aria-hidden="true"></i></button>
+				</span>
+			</p>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="cidade_ibge">Cód. IBGE</label>
+			<input type="text" class="form-control" id="cidade_ibge" ng-model="ctrl.cidade.codIBGE">
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label for="cidade_dt_criacao">Data criação</label>
+			<input type="text" class="form-control" id="cidade_dt_criacao" uib-datepicker-popup="dd/MM/yyyy hh:mm" ng-model="ctrl.cidade.dtCriacao" ng-disabled="true">
+		</div>
+		<div class="form-group col-md-4">
+			<label for="cidade_dt_alteracao">Data alteração</label>
+			<input type="text" class="form-control" id="cidade_dt_alteracao" uib-datepicker-popup="dd/MM/yyyy hh:mm" ng-model="ctrl.cidade.dtAlteracao" ng-disabled="true">
+		</div>
+	</div>
+</form>
+
+<form class="form-inline" ng-show="ctrl.modoGrade">
+	<div class="form-group">
+		<select name="tipoCampoBusca" ng-model="ctrl.campoSelecionado"  class="form-control">
+			<option value=""></option>
+			<option value="id">ID</option>
+			<option value="nome">Nome</option>
+			<option value="codIGBE">Código IBGE</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<input  class="form-control" type="text" id="busca" ng-model="ctrl.valorBusca">
+	</div>
+	<button ng-click="ctrl.buscarTodos(1)" class="btn btn-default"><span class="glyphicon glyphicon-search barraFerramenta" aria-hidden="true"></span></button>
+</form>
+
+<table class="table table-hover" ng-show="ctrl.modoGrade">
+  <tr>
+	  <td><strong>ID</strong></td>
+	  <td><strong>Nome</strong></td>
+	  <td><strong>Unidade Federativa</strong></td>
+	  <td><strong>Cód. IBGE</strong></td>
+	  <td></td>
+  </tr>
+  <tr ng-repeat="cidadetb in ctrl.cidades">
+	  <td ng-bind="cidadetb.id"></td>
+	  <td ng-bind="cidadetb.nome"></td>
+	  <td ng-bind="cidadetb.uf.descricao"></td>
+	  <td ng-bind="cidadetb.codIBGE"></td>
+	  <td>
+	  	<button class="btn-floating blue" ng-click="ctrl.editar(cidadetb.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+	 	<button class="btn-floating blue" ng-click="ctrl.excluir(cidadetb.id)"><span class="glyphicon glyphicon-remove"></span></button>
+	  </td>
+  </tr>
+</table>
+<div align="center">
+	<ul uib-pagination total-items="ctrl.totalItens" ng-model="ctrl.paginaAtual" max-size="ctrl.tamanhoMax" class="pagination-sm" boundary-link-numbers="true"
+		previous-text='Anterior' ng-change="ctrl.pageChanged()" next-text='Próximo' ng-show="ctrl.modoGrade"></ul>
+</div>
+</div>
+<script type="text/ng-template" id="popUpPesquisaUf.html">
+	<div class="modal-header">
+		<h3 class="modal-title" id="modal-title">Buscar Unidade Federativa</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-inline">
+			<div class="form-group">
+				<select name="tipoCampoBusca" ng-model="pesquisaUfCtrl.campoSelecionado" class="form-control">
+					<option value=""></option>
+					<option value="id">ID</option>
+					<option value="nome">Nome</option>
+					<option value="sigla">Sigla</option>
+					<option value="codIBGE">Código IBGE</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<input  class="form-control" type="text" id="busca" ng-model="pesquisaUfCtrl.valorBusca">
+			</div>
+			<button ng-click="pesquisaUfCtrl.buscarTodos(1)" class="btn btn-default"><span class="glyphicon glyphicon-search barraFerramenta" aria-hidden="true"></span></button>
+		</form>
+		<table class="table table-hover">
+			<tr>
+				<td><strong>ID</strong></td>
+				<td><strong>Nome</strong></td>
+				<td><strong>Sigla</strong></td>
+				<td><strong>Cód. IBGE</strong></td>
+			</tr>
+			<tr ng-repeat="uftb in pesquisaUfCtrl.ufs" ng-click="pesquisaUfCtrl.selecionarUf(uftb)">
+				<td ng-bind="uftb.id"></td>
+				<td ng-bind="uftb.descricao"></td>
+				<td ng-bind="uftb.sigla"></td>
+				<td ng-bind="uftb.codIBGE"></td>
+			</tr>
+		</table>
+	</div>
+	<div align="center">
+		<ul uib-pagination total-items="pesquisaUfCtrl.totalItens" ng-model="pesquisaUfCtrl.paginaAtual" max-size="pesquisaUfCtrl.tamanhoMax" class="pagination-sm" boundary-link-numbers="true"
+			previous-text='Anterior' ng-change="pesquisaUfCtrl.pageChanged()" next-text='Próximo'></ul>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="pesquisaUfCtrl.ok()">OK</button>
+		<button class="btn btn-warning" type="button" ng-click="pesquisaUfCtrl.cancel()">Cancel</button>
+	</div>
+</script>
+<script type="text/ng-template" id="popUpErro.html">
+	<div class="modal-header">
+		<h3 class="modal-title" id="modal-title">Erro</h3>
+	</div>
+	<h3>{{erroCtrl.mensagem}}</h3>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="erroCtrl.ok()">OK</button>
+	</div>
+</script>
+</div>

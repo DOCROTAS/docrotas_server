@@ -1,0 +1,59 @@
+<html ng-app="docrotasApp">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen,projection">
+	<link type="text/css" rel="stylesheet" href="css/docrotas-style.css" media="screen,projection">
+	
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container.fluid">
+    <div class="navbar-header">
+    	<span class="navbar-brand"><a href="#">DOC ROTAS</a></span>
+    </div>
+    <div class="collapse navbar-collapse">
+    	<ul class="nav navbar-nav">
+    		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="#/usuario">Usuário</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#/empresa">Empresa</a></li>
+              <li><a href="#/pessoa">Pessoa</a></li>
+              <li><a href="#/veiculo">Veículo</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#/uf">Unidade Fererativa</a></li>
+              <li><a href="#/cidade">Cidade</a></li>
+          </ul>
+			  </li>
+    		<li><a href="#/cte">CT-e</a></li>
+    		<li><a href="">MDF-e</a></li>
+    	</ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+	<div ng-view></div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="angular/angular.min.js"></script>
+<script type="text/javascript" src="angular/angular-route.min.js"></script>
+<script type="text/javascript" src="angular/angular-touch.min.js"></script>
+<script type="text/javascript" src="angular/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="angular/angular-animate.min.js"></script>
+<script type="text/javascript" src="ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/docrotasApp.js"></script>
+<script type="text/javascript" src="js/ufController.js"></script>
+<script type="text/javascript" src="js/cidadeController.js"></script>
+<script type="text/javascript" src="js/usuarioController.js"></script>
+<script type="text/javascript" src="js/empresaController.js"></script>
+<script type="text/javascript" src="js/pessoaController.js"></script>
+<script type="text/javascript" src="js/veiculoController.js"></script>
+<script type="text/javascript" src="js/cteController.js"></script>
+</body>
+</html>
