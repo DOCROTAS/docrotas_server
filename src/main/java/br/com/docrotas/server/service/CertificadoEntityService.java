@@ -85,36 +85,4 @@ public class CertificadoEntityService {
 		
 		return salvar(certificado);
 	}
-	
-	public static void main(String[] args) {
-		int a = 1;
-		int b = 2;
-		int c = 3;
-		
-//		System.out.println(maiorNumero(maiorNumero(a, b), c));
-		
-		if (a > b) {
-			if (a > c) {
-				System.out.println(a);
-			} else {
-				System.out.println(c);
-			}
-		} else {
-			if (b > c) {
-				System.out.println(b);
-			} else {
-				System.out.println(c);
-			}
-		}
-		
-	}
-	
-	public static int maiorNumero(int x, int y) {
-		if (x > y) {
-			return x;
-		} else {
-			return y;
-		}
-	}
-
 }
