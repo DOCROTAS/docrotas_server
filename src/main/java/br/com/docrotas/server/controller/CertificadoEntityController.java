@@ -43,7 +43,7 @@ public class CertificadoEntityController {
 						             		@RequestParam(value = "qtd", required = true)int qtd,
 					             			@RequestParam(value = "contaId", required = false)Long contaId){
 		Pageable pageable = new PageRequest(pagina, qtd);
-		
+
 		Page pageCertificado;
 
 		if (contaId != null) {
@@ -51,7 +51,7 @@ public class CertificadoEntityController {
 		} else {
 			pageCertificado = certificadoEntityService.buscarTodos(pageable);
 		}
-		
+
 		return pageCertificado;
 	}
 	
@@ -65,4 +65,11 @@ public class CertificadoEntityController {
 								@RequestParam(name = "senha", required = true) String senha) throws IOException, Exception {
 		certificadoEntityService.salvarArquivo(file, senha);
 	}
+	
+	@PostMapping(path="/certificado/teste")
+	public void carregarArquivo(@RequestParam(name = "file", required = true) MultipartFile file) throws IOException, Exception {
+		System.out.println(file.getOriginalFilename());
+	}
+	
+	
 }
