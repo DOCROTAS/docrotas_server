@@ -63,13 +63,7 @@ public class CertificadoEntityController {
 	@PostMapping("/certificado")
 	public void carregarArquivo(@RequestParam(name = "file", required = true) MultipartFile file,
 								@RequestParam(name = "senha", required = true) String senha) throws IOException, Exception {
-		certificadoEntityService.salvarArquivo(file, senha);
+		certificadoEntityService.validar(file, senha);
 	}
-	
-	@PostMapping(path="/certificado/teste")
-	public void carregarArquivo(@RequestParam(name = "file", required = true) MultipartFile file) throws IOException, Exception {
-		System.out.println(file.getOriginalFilename());
-	}
-	
 	
 }

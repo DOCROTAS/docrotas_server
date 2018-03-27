@@ -55,7 +55,7 @@ public class CertificadoEntityService {
 		certificadoEntityRepository.delete(id);
 	}
 
-	public CertificadoEntity salvarArquivo(MultipartFile file, String senha) throws IOException, Exception {
+	public CertificadoEntity validar(MultipartFile file, String senha) throws IOException, Exception {
 		
 		boolean senhaValida = CertificadoDigitalUtils.senhaValida(file.getBytes(), senha);
 		
@@ -85,5 +85,4 @@ public class CertificadoEntityService {
 		
 		return salvar(certificado);
 	}
-	
 }
