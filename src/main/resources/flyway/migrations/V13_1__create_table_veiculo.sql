@@ -1,0 +1,20 @@
+create table veiculo (
+	id int not null auto_increment,
+	cod_interno varchar(10),
+	placa varchar(7) not null,
+	renavam varchar(11) not null,
+	tara numeric(6),
+	cap_kg numeric(6),
+	cap_m3 numeric(3),
+	rntrc varchar(8),
+	tipo_proprietario varchar(2),
+	tipo_rodado varchar(2),
+	tipo_carroceria varchar(2),
+	dt_criacao timestamp,
+	dt_alteracao timestamp,
+	pessoaproprietario_id int not null,
+	uflicenciamento_id int(2) not null,
+	primary key (id),
+	foreign key (uflicenciamento_id) references uf(cod_ibge),
+	foreign key (pessoaproprietario_id) references pessoa(id)	
+);
