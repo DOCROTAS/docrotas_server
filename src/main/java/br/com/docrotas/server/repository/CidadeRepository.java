@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import br.com.docrotas.server.entity.Cidade;
 
 @Repository
-public interface CidadeRepository extends JpaRepository<Cidade, Long>, JpaSpecificationExecutor<Cidade>{
+public interface CidadeRepository extends JpaRepository<Cidade, Long>, JpaSpecificationExecutor<Cidade> {
 	
 	public Page<Cidade> findById(Long id, Pageable pageable);
 	
