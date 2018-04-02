@@ -23,6 +23,11 @@ public class CidadeController {
 	@Autowired
 	private CidadeRepository cidadeRepository;
 	
+	@GetMapping("/cidade/{id}")
+	public Cidade buscarPorId(@PathVariable Long id) {
+		return cidadeRepository.findOne(id);
+	}
+	
 	@GetMapping("/cidade")
 	public Page<Cidade> buscarTodos(@RequestParam(value = "pagina", required = true)int pagina,
 									@RequestParam(value = "qtd", required = true)int qtd,
