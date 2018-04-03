@@ -23,6 +23,11 @@ public class CfopController {
 	@Autowired
 	private CfopRepository cfopRepository;
 	
+	@GetMapping("/cfop/{id}")
+	public Cfop buscarPorID(@PathVariable Long id) {
+		return cfopRepository.findOne(id);
+	}
+	
 	@GetMapping("/cfop")
 	public Page<Cfop> buscarTodos(@RequestParam(value = "pagina", required = true)int pagina,
 								  @RequestParam(value = "qtd", required = true)int qtd,
