@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum TipoEmissao {
 	NORMAL("1"),
+	CONTINGENCIA_MDFE("2"),
 	EPEC_SVC("4"),
 	CONTINGENCIA_FSDA("5"),
 	SVC_RS("7"),
