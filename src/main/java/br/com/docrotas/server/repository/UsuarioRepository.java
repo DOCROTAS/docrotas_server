@@ -15,7 +15,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>, JpaSpec
 	
 	public Page<Usuario> findByLoginContaining(String login, Pageable pageable);
 	
-	public Page<Usuario> findByLoginAndSenha(String login, String senha, Pageable pageable);
+	public Usuario findByLoginAndSenha(String login, String senha);
 	
 	public Page<Usuario> findByEmail(String email, Pageable pageable);
 
