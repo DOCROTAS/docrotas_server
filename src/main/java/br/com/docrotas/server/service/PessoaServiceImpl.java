@@ -13,24 +13,24 @@ import br.com.docrotas.server.entity.Pessoa;
 import br.com.docrotas.server.repository.PessoaRepository;
 
 @Service
-public class PessoaServiceImpl implements PessoaService {
+public class PessoaServiceImpl /*implements PessoaService*/ {
 	
-	@Autowired
-	private PessoaRepository pessoaRepository;
-	
-	@Override
-	public Page<Pessoa> findAll(Map<String, String> filtro, Pageable pageable){
-		return pessoaRepository.findAll(filtrarOpcoes(filtro), pageable);
-	}
-	
-	@Override
-	public Pessoa salvar(Pessoa pessoa) {
-		return pessoaRepository.save(pessoa);
-	}
-
-	@Override
-	public void deletar(Long id) {
-		pessoaRepository.delete(id);
-	}
+//	@Autowired
+//	private PessoaRepository pessoaRepository;
+//	
+//	@Override
+//	public Page<Pessoa> findAll(Map<String, String> filtro, Pageable pageable){
+//		return pessoaRepository.findAll(filtrarOpcoes(filtro), pageable);
+//	}
+//	
+//	@Override
+//	public Pessoa salvar(Pessoa pessoa) {
+//		return pessoaRepository.save(pessoa);
+//	}
+//
+//	@Override
+//	public void deletar(Long id) {
+//		pessoaRepository.delete(id);
+//	}
 	
 }
