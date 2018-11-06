@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import br.com.docrotas.server.listerner.PessoaListerner;
+import br.com.docrotas.server.utils.CpfCnpjUtils;
 
 @Entity
 @Table(name = "pessoa")
@@ -86,7 +87,7 @@ public class Pessoa implements Serializable {
 	}
 
 	public void setCpfCnpj(String cpfCnpj) {
-		this.cpfCnpj = cpfCnpj;
+		this.cpfCnpj = CpfCnpjUtils.limparMascara(cpfCnpj);
 	}
 
 	public String getIe() {

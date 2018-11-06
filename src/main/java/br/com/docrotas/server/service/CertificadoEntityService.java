@@ -61,7 +61,7 @@ public class CertificadoEntityService {
 		
 		if (!senhaValida) {
 			throw new Exception("Senha do certificado inválida.");
-		}
+		} 
 		
 		CertificadoEntity certificado = new CertificadoEntity();
 		
