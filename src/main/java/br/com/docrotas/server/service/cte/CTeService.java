@@ -1,6 +1,4 @@
-package br.com.docrotas.server.service.cte;
-//package br.com.docrotas.docrotasweb.service.cte;
-//
+//package br.com.docrotas.server.service.cte;
 //import java.io.IOException;
 //import java.io.StringReader;
 //import java.net.URL;
@@ -36,6 +34,7 @@ package br.com.docrotas.server.service.cte;
 //import br.com.docrotas.docrotasweb.service.RespostaRecepcao;
 //import br.com.docrotas.docrotasweb.service.RespostaRetornoRecepcao;
 //import br.com.docrotas.docrotasweb.utils.DocumentoEletronicoUtils;
+//import br.com.docrotas.server.repository.CteRepository;
 //
 //@Service
 //public class CTeService {
@@ -43,7 +42,7 @@ package br.com.docrotas.server.service.cte;
 //	private static final Logger log = Logger.getLogger(CTeService.class);
 //	
 //	private static final String PATH_CERTIFICADO = "C:/certificado.pfx";
-//	private static final String SENHA_CERTIFICADO = "12345678";
+//	private static final String SENHA_CERTIFICADO = "Tk18@Kothe";
 //	private static final String PATH_CACERTS = "C:/cacerts";
 //	private static final String CODIGO_UF = "31";
 //	private static final String VERSAO = "3.00";
@@ -59,7 +58,7 @@ package br.com.docrotas.server.service.cte;
 //	private static final String URL_CTE_RET_RECEPCAO = "https://hcte.fazenda.mg.gov.br/cte/services/CteRetRecepcao";
 //	
 //	@Autowired
-//	private CTeRepository cteRepository;
+//	private CteRepository cteRepository;
 //	@Autowired
 //	private NFeRepository nFeRepository;
 //	

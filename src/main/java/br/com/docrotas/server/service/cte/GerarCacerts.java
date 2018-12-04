@@ -20,7 +20,7 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 public class GerarCacerts {
-	private static final String JSSECACERTS = "cacerts";
+	private static final String JSSECACERTS = "C:\\Users\\lauro\\carcets";
 	private static final int TIMEOUT_WS = 30;
 
 	public static void main(String[] args) {
@@ -57,7 +57,7 @@ public class GerarCacerts {
 			 * homologacao.nfe.sefazvirtual.rs.gov.br
 			 */
 			get("hcte.fazenda.mg.gov.br", 443, ks);
-//			get("hnfe.sefaz.ba.gov.br", 443, ks);
+			get("cte-homologacao.svrs.rs.gov.br", 443, ks);
 //			get("nfeh.sefaz.ce.gov.br", 443, ks);
 //			get("homolog.sefaz.go.gov.br", 443, ks);
 //			get("hnfe.fazenda.mg.gov.br", 443, ks);

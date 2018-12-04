@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:rodo xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:p="http://www.portalfiscal.inf.br/cte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portalfiscal.inf.br/cte cteModalRodoviario_v3.00.xsd ">
+  <p:RNTRC>p:RNTRC</p:RNTRC>
+</p:rodo>
